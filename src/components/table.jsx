@@ -1,25 +1,9 @@
-import "../CSS/dashboard.css";
-import analysisimg from "../assets/analysis-img.png";
-import analysisimg_2 from "../assets/analysis-img-2.png";
 import data from "../data.json";
-export default function Dashboard() {
-  return (
-    <div>
-      <div className="row g-0 text-center">
-        <div className="col-sm-6 col-md-6 ">
-          <img className="analysis-img" src={analysisimg} alt="img" srcset="" />
-        </div>
-        <div className="col-6 col-md-6 ">
-          <img
-            className="analysis-img"
-            src={analysisimg_2}
-            alt="img"
-            srcset=""
-          />
-        </div>
-      </div>
 
-      <div className="row">
+export default function Table(){
+    return(
+        <div>
+  <div className="row">
         <div className="col-12">
           <table class="table table-striped table-light">
             <thead>
@@ -33,7 +17,7 @@ export default function Dashboard() {
               </tr>
             </thead>
             <tbody>
-              {data.map((value , index) => index < 10 &&(
+              {data.map((value , index) => (
                 <tr className="border">
                   <td className="border">{index + 1}</td>
                   <td className="border" scope="row">{value._id}</td>
@@ -47,6 +31,6 @@ export default function Dashboard() {
           </table>
         </div>
       </div>
-    </div>
-  );
+        </div>
+    )
 }

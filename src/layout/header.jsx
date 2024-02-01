@@ -12,7 +12,7 @@ export default function Header({navBarHeading ,  handleShowHeading}) {
     <div  className="d-flex">
       <Navbar expand="lg" className="bg-body-tertiary header-main-body flex-grow-1">
         <Container fluid>
-          <Navbar.Brand href="#">{navBarHeading}</Navbar.Brand>
+          <Navbar.Brand href="#" className="header-text">{navBarHeading}</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav

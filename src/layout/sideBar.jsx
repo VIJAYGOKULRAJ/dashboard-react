@@ -10,6 +10,7 @@ export default function SideBar({ handleShowHeading }) {
   const isDashboardRoute = location.pathname === "/dashboard";
   const isAboutRoute = location.pathname === "/about";
   const isFormRoute = location.pathname === "/form";
+  const isTableRoute = location.pathname === "/table";
 
   const iconData = {
     size: {
@@ -120,6 +121,29 @@ export default function SideBar({ handleShowHeading }) {
                   icon="ant-design:form-outlined"
                 />
                 <span>Form</span>
+              </div>
+            </div>
+          </li>
+        </Link>
+
+        <Link to="/table" className="text-black text-decoration-none">
+          <li className="sidebar-content">
+            <div
+              className={`d-flex justify-content-center align-items-center ps-5 ${
+                isTableRoute ? "sidebar-content-set" : "sidebar-content"
+              }`}
+              onClick={() => handleShowHeading("Table")}
+            >
+              <div className="w-100 d-flex align-items-center ">
+                <Icon
+                  className="my-3"
+                  style={{
+                    height: iconData.size.height,
+                    width: iconData.size.width,
+                  }}
+                 icon="arcticons:nextcloud-tables"
+                />
+                <span>Table</span>
               </div>
             </div>
           </li>

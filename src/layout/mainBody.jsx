@@ -10,13 +10,15 @@ export default function MainBody() {
   const handleShowHeading = (contentValue) => {
     setNavBarHeading(contentValue);
     if (contentValue === "Dashboard") {
-      setNavBarHeading("Dashboard");
+      setNavBarHeading("DASHBOARD");
     } else if (contentValue === "About") {
-      setNavBarHeading("About");
+      setNavBarHeading("ABOUT");
     } else if (contentValue === "Calculator") {
-      setNavBarHeading("Calculator");
+      setNavBarHeading("CALCULATOR");
     } else if (contentValue === "Form-1") {
-      setNavBarHeading("Form");
+      setNavBarHeading("FORM");
+    }else if (contentValue === "Table") {
+      setNavBarHeading("TABLE");
     }
   };
 
