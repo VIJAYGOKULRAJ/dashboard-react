@@ -1,0 +1,32 @@
+.header-main-body{
+width: 83%;
+}
+.header-text{
+    font-size: 30px;
+    letter-spacing: 12px;
+    font-weight: normal;
+    background:linear-gradient(
+        to right, rgb(79, 79, 79), #d4d4d4 35% ,#373737
+    );
+    background-size: 200% auto;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 4s linear infinite;
+}
+@keyframes gradient{
+    0% {
+        background-position: 0% 75%;
+    }
+    50% {
+        background-position: 100% 50%;
+    } 
+    100% {
+        background-position: 0% 70%;
+    }
+}
+@media screen and (max-width:990px) {
+    .header-main-body{
+        width: 100%;
+        }
+        
+  }
