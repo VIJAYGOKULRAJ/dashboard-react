@@ -2,7 +2,10 @@ import "../CSS/dashboard.css";
 import analysisimg from "../assets/analysis-img.png";
 import analysisimg_2 from "../assets/analysis-img-2.png";
 import data from "../data.json";
+import { useState } from "react";
+import { log } from "mathjs";
 export default function Dashboard() {
+
   return (
     <div>
       <div className="row g-0 text-center">
@@ -33,9 +36,9 @@ export default function Dashboard() {
               </tr>
             </thead>
             <tbody>
-              {data.map((value , index) => index < 10 &&(
+              {data.map((value , index) => index < 5 &&(
                 <tr className="border">
-                  <td className="border">{index + 1}</td>
+                  <td className="border">{ index + 1}</td>
                   <td className="border" scope="row">{value._id}</td>
                   <td className="border">{value.name}</td>
                   <td className="border">{value.age}</td>
