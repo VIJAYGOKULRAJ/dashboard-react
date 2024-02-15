@@ -5,8 +5,10 @@ import Calculator from "./components/calculator";
 import Form1 from "./components/form1";
 import Dashboard from "./components/dashboard";
 import Charts from "./components/about";
-import Table from "./components/table";
+import Table from "./Pages/table";
 import CustomerDetails from "./Pages/customerDetails";
+import { Table2 } from "./Pages/table2";
+
 
 
 export default function Main(){
@@ -20,6 +22,8 @@ export default function Main(){
                 <Route path="/table" element={<Table />}/>
                 <Route path="/table/:getCusById" element={<CustomerDetails />}/>
                 <Route path="/dashboard" element={<Dashboard />}/>
+                <Route path="/table2" element={<Table2 />}/>
+
             </Route>
         </Routes>
         </BrowserRouter>

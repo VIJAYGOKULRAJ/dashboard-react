@@ -4,8 +4,17 @@ import analysisimg_2 from "../assets/analysis-img-2.png";
 import data from "../data.json";
 import { useState } from "react";
 import { log } from "mathjs";
+import TableList from "./TableList";
 export default function Dashboard() {
-
+const records = data.slice(1,6)
+const column = [
+  {heading : 'Sno' , value : ''},
+  {heading : 'Name' , value : 'name'},
+  {heading : 'Age' , value : 'age'},
+  {heading : 'Gender' , value : 'gender'},
+  {heading : 'Email' , value : 'email'},
+  {heading : 'Company' , value : 'company'},
+]
   return (
     <div>
       <div className="row g-0 text-center">
@@ -24,30 +33,10 @@ export default function Dashboard() {
 
       <div className="row">
         <div className="col-12">
-          <table class="table table-striped table-light">
-            <thead>
-              <tr className="border">
-                <th scope="col" className="border">Sno</th>
-                <th scope="col" className="border">Id</th>
-                <th scope="col" className="border">Name</th>
-                <th scope="col" className="border">Age</th>
-                <th scope="col" className="border">Gender</th>
-                <th scope="col" className="border">Company</th>
-              </tr>
-            </thead>
-            <tbody>
-              {data.map((value , index) => index < 5 &&(
-                <tr className="border">
-                  <td className="border">{ index + 1}</td>
-                  <td className="border" scope="row">{value._id}</td>
-                  <td className="border">{value.name}</td>
-                  <td className="border">{value.age}</td>
-                  <td className="border">{value.gender}</td>
-                  <td className="border"> {value.company}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <TableList  
+        record = {records}
+        column = {column}
+      />
         </div>
       </div>
     </div>

@@ -1,48 +1,40 @@
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
+import axios from 'axios';
 import "../CSS/form.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import TableList from './TableList';
 
 export default function Form1() {
   const [showPassword, setShowPassword] = useState(false);
-
+  const [users, setUsers] = useState([])
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
   };
+  useEffect(() => {
+    axios.get('https://gorest.co.in/public/v2/users')
+      .then(function (response) {
+        setUsers(response.data)
 
+
+      })
+      .catch(function (err) {
+        console.log(err)
+      })
+  }, [])
+
+  console.log(users)
+  const column = [
+    { heading: 'Name', value: 'name' },
+    { heading: 'Email', value: 'email' },
+    { heading: 'Gender', value: 'gender' },
+    { heading: 'Status', value: 'status', type: 'dropdown', options: ['Active', 'Inactive'] },
+
+  ]
   return (
     <div className="form-body m-5">
-      <Form style={{ width: "50%" }}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter your name" />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Phone Number</Form.Label>
-          <Form.Control type="number" placeholder="Enter your number" />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            type={showPassword ? "text" : "password"}
-            placeholder="Password"
-          />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check
-            type="checkbox"
-            label="Show Password"
-            onChange={handleShowPassword}
-          />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-      </Form>
+      <TableList
+        record={users}
+      column = {column}
+      />
     </div>
   );
 }

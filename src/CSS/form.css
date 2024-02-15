@@ -2,3 +2,7 @@
     height: 100%;
     padding-top: 30px;
 }
+.dropdown-btn{
+    border: none;
+    background: transparent;
+}

@@ -19,6 +19,8 @@ export default function MainBody() {
       setNavBarHeading("FORM");
     }else if (contentValue === "Table") {
       setNavBarHeading("TABLE");
+    }else if (contentValue === "TableList") {
+      setNavBarHeading("TableList");
     }
   };
 
@@ -31,7 +33,9 @@ export default function MainBody() {
             lg={2}
             className="p-0 d-none d-md-none d-lg-flex h-100 flex-column "
           >
-            <SideBar handleShowHeading={handleShowHeading} />
+            <SideBar handleShowHeading={handleShowHeading} 
+            
+            />
           </Col>
           <Col xs={12} lg={10} className="p-0 d-flex flex-column vh-100">
             <Row>

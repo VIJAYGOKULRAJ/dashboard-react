@@ -11,7 +11,7 @@ export default function CustomerDetails() {
     const addressLine_2 = cusDetailsGet.address.split(',')[1]
     const city = cusDetailsGet.address.split(',')[2]
     const cityCode = cusDetailsGet.address.split(',')[3]
-const aboutContent = cusDetailsGet.about
+    const aboutContent = cusDetailsGet.about
 
     return (
         <div className='d-flex justify-content-center align-items-center vh-100'>
